@@ -1,0 +1,22 @@
+﻿@page "/popuppage"
+@using BlazorServerLifeCycle.Components
+@using MudBlazor
+
+<h3>PopupPage</h3>
+
+<MudBlazor.MudButton OnClick="(e => ShowPopup())">Show Popup</MudBlazor.MudButton>
+
+@code {
+
+    [Inject]
+    public IDialogService DialogService { get; set; }
+
+    private async Task ShowPopup()
+    {
+        var options = new DialogOptions() { MaxWidth = MaxWidth.Medium };
+
+        var dialog = DialogService.Show<PopupComponent>("Popup", options);
+        var result = await dialog.Result;
+    }
+
+}

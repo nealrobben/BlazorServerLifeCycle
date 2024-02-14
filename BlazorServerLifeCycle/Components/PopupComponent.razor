@@ -1,0 +1,22 @@
+﻿<h3>PopupComponent</h3>
+
+@code {
+
+    protected override void OnInitialized() => Console.WriteLine("PopupComponent - OnInitialized");
+
+    protected override async Task OnInitializedAsync()
+    {
+        Console.WriteLine("PopupComponent - OnInitializedAsync - Begin");
+        await Task.Delay(300);
+        Console.WriteLine("PopupComponent - OnInitializedAsync - End");
+    }
+
+    protected override void OnParametersSet() => Console.WriteLine("PopupComponent - OnParametersSet");
+
+    protected override async Task OnParametersSetAsync() => Console.WriteLine("PopupComponent - OnParametersSetAsync");
+
+    // protected override void OnAfterRender(bool firstRender) => Console.WriteLine($"SecondPage - OnAfterRender (First render: {firstRender})");
+
+    // protected override async Task OnAfterRenderAsync(bool firstRender) => Console.WriteLine($"SecondPage - OnAfterRenderAsync (First render: {firstRender})");
+
+}
